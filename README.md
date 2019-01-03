@@ -15,10 +15,19 @@ The UI provides a web frontend that users can use to browse data from the API.
 
 ### Requirements
 
-- [Node.js](https://nodejs.org), perferably a v10 LTS.
+- [Node.js](https://nodejs.org), perferably a v10 LTS release or greater.
+- [Git](https://git-scm.org).
 - A text editor.
 
 ### Steps
+
+```bash
+# clone the repo
+$ git clone https://github.com/DrPitLazarus/devinity-data-tool.git
+
+# change directory into project root
+$ cd devinity-data-tool
+```
 
 See the `README.md` in `api` and `ui` directories for development steps.
 
