@@ -1,0 +1,30 @@
+{
+  "name": "devinity-data-tool",
+  "version": "1.0.0",
+  "description": "Web interface to browse Devinity's database.",
+  "main": "api/index.js",
+  "scripts": {
+    "dev-api": "micro-dev api",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drpitlazarus/devinity-data-tool.git"
+  },
+  "author": "Philip Malloy <drpitlazarus@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drpitlazarus/devinity-data-tool/issues"
+  },
+  "homepage": "https://github.com/drpitlazarus/devinity-data-tool#readme",
+  "dependencies": {
+    "make-promises-safe": "^4.0.0",
+    "micro": "^9.3.3",
+    "mysql": "^2.16.0",
+    "url-pattern": "^1.0.3"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0",
+    "now-env": "^3.1.0"
+  }
+}
