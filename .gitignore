@@ -9,5 +9,7 @@ ehthumbs.db
 Thumbs.db
 
 
+# Project files #
+#################
 node_modules
 now-secrets.json
