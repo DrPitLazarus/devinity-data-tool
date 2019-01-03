@@ -34,7 +34,8 @@ $ npm run dev-api
 - `api/`
   - `src/`
     - `classes/` - Classes for obtaining data
+      -  `index.js` - Export, puts classes into a object
     - `routes/` - Routes for the endpoints
-      - `index.js` - Plugin to register all routes
-    - `dbconn.js` - Export to create database connection pool
+      - `index.js` - Export, puts all routes into an array
+    - `dbconn.js` - Export, creates database connection pool
   - `index.js` - API entry point
