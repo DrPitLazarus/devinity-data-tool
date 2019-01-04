@@ -11,11 +11,6 @@ module.exports = class Devinity {
         let result;
         try {
             result = await this.db.query(query, [steamid]);
-            if (result == false) {
-                result = messages.NO_ITEMS_RETURNED;
-            } else {
-                result = result[0];
-            }
         } catch (err) {
             result = messages.createError("getPlayerBySteamID", err.code);
         }

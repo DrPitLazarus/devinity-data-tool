@@ -16,9 +16,6 @@ module.exports = class FMRoundsList {
         let result;
         try {
             result = await this.db.query(query);
-            if (result == false) {
-                result = messages.NO_ITEMS_RETURNED;
-            }
         } catch (err) {
             result = messages.createError('setList', err.code);
         }
@@ -33,9 +30,6 @@ module.exports = class FMRoundsList {
         let result;
         try {
             result = await this.db.query(query, [rounds]);
-            if (result == false) {
-                result = messages.NO_ITEMS_RETURNED;
-            }
         } catch (err) {
             result = messages.createError("setListByRounds", err.code);
         }
@@ -50,9 +44,6 @@ module.exports = class FMRoundsList {
         let result;
         try {
             result = await this.db.query(query, [server]);
-            if (result == false) {
-                result = messages.NO_ITEMS_RETURNED;
-            }
         } catch (err) {
             result = messages.createError("setListByServer", err.code);
         }
@@ -67,11 +58,8 @@ module.exports = class FMRoundsList {
         let result;
         try {
             result = await this.db.query(query, [this.getRounds()]);
-            if (result == false) {
-                result = messages.NO_ITEMS_RETURNED;
-            }
         } catch (err) {
-            result = messages.createError("setPlayerCount", err.code);
+            result = messages.createError("setPlayerCounts", err.code);
         }
         this.players = result;
     }
@@ -82,9 +70,12 @@ module.exports = class FMRoundsList {
 
     getMergedList() {
         return this.list.map(obj => {
-            let newObj = { ...obj };
-            let findInPlayers = this.players.find(plyObj => plyObj.round === obj.id);
-            newObj.players = findInPlayers ? findInPlayers.players : 0;
+            // Returns the players object with the same round id
+            let playersCountObj = this.players.find(plyObj => plyObj.round === obj.id);
+            let newObj = { 
+                ...obj,
+                players: playersCountObj ? playersCountObj.players : 0
+            };
             return newObj;
         });
     }
@@ -105,9 +96,7 @@ module.exports = class FMRoundsList {
         let result;
         try {
             result = await this.db.query(query, [playerid]);
-            if (result == false) {
-                result = messages.NO_ITEMS_RETURNED;
-            } else {
+            if (result.length) {
                 result = result.map(row => row.round);
             }
         } catch (err) {
