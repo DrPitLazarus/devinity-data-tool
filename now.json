@@ -2,14 +2,8 @@
     "version": 2,
     "name": "devinity-data-tool",
     "public": false,
-    "env": {
-        "db": "devinity",
-        "host": "@host",
-        "user": "@user",
-        "pass": "@pass"
-    },
     "builds": [
-        { "src": "api/index.js", "use": "@now/node" }
+        { "src": "api/package.json", "use": "@now/node" }
     ],
     "routes": [
         { "src": "/api/(.*)", "dest": "api/index.js" }

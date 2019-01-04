@@ -1,5 +1,4 @@
 // import packages
-require('now-env');
 require('make-promises-safe');
 const { send } = require('micro');
 const urlPattern = require('url-pattern');
@@ -14,7 +13,6 @@ const dbconn = require('./src/dbconn')({
     password: process.env.pass,
     database: process.env.db
 });
-
 
 
 // this is run on each request

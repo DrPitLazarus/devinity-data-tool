@@ -6,17 +6,11 @@ REST API backend server for devinity-data-tool. This API will only need to GET; 
 
 ### Steps
 
-1. Create a `now-secrets.json` file in the root folder (where `now.json` is).
-Replace the values for the database connection. 
-Note: The database name is inside `now.json`. 
-The `now-env` package will make these keys available to `process.env`. 
-This file should **never** be commited for security reasons, and is only used for local development.
-```json
-{
-    "@host": "ipaddress",
-    "@user": "dbusername",
-    "@pass": "dbuserpassword"
-}
+Note: I recommend running commands in git bash or terminal, not cmd or powershell.
+
+1. Set environment variables in bash so it can connect to the database when you run step 3.
+```bash
+$ export db=somedbname host=12.345.23.12 user=someusername pass=supersecret
 ```
 
 2. Install the packages.
@@ -24,9 +18,9 @@ This file should **never** be commited for security reasons, and is only used fo
 $ npm install # or the alias 'npm i'
 ```
 
-3. Run locally.
+3. Run locally. This does not auto-reload micro so you will need to CTRL+C and start again for changes. 
 ```bash
-$ npm run dev-api
+$ npm start
 ```
 
 ## Project Structure
