@@ -39,15 +39,6 @@ module.exports = class FMRoundsDetails {
         this.playersMeta = result;
     }
 
-    
-            // return {
-                // id: obj.ply
-                // steamid: obj.steamid,
-                // nick: obj.nick,
-                // nation: obj.nationality,
-                // playtime: obj.playtime
-            // }
-
     async setProps() {
         let query = `SELECT ply,prop,amount 
         FROM rounds_props WHERE round = ?`;
