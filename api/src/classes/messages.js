@@ -2,12 +2,13 @@ module.exports = {
 
     createError: (title, err) => {
         return {
-            error: `api ${title}: ${err}`
+            code: 'ERROR_API_INTERNAL',
+            error: `${title}: ${err}`
         }
     },
 
     NO_ITEMS_RETURNED: {
-        message: 'No items returned.'
+        message: 'NO_ITEMS_RETURNED'
     }
 
 }
