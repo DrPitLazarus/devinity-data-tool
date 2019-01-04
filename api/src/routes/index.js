@@ -1,3 +1,4 @@
+const fmRoundsDetails = require('./fmRoundsDetails');
 const fmRoundsList = require('./fmRoundsList');
 
 let prefix = "/api";
@@ -14,6 +15,7 @@ function pushRoutes(routesArr) {
 }
 
 (() => {
+    pushRoutes(fmRoundsDetails);
     pushRoutes(fmRoundsList);
 })()
 
