@@ -8,6 +8,7 @@ const routes = require('./src/routes');
 const api = require('./src/classes');
 const dbconn = require('./src/dbconn')({
     connectionLimit: 10,
+    timezone: "-05:00",
     host: process.env.host,
     user: process.env.user,
     password: process.env.pass,
