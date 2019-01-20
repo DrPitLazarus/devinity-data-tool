@@ -1,0 +1,76 @@
+/* Global */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box; 
+}
+/* Global links */
+a {
+    color: #0000b7;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: #000;
+}
+
+
+/* Main Nav */
+nav#main-nav {
+    background-color: #ececec;
+    padding-bottom: 8px;
+}
+nav#main-nav #site-header {
+    margin: 0;
+    padding: 8px;
+}
+nav#main-nav a {
+    margin-left: 12px;
+}
+nav#main-nav a:first-of-type {
+    margin-left: 8px;
+}
+
+
+
+
+main h2 {
+    margin: 10px 0 8px;
+    line-height: 1.2;
+}
+main {
+    margin: 8px;
+    line-height: 1.5;
+}
+
+main select, main button {
+    height: 21px;
+}
+
+
+
+/* Helpers */
+.is-hidden {
+    display: none;
+}
+
+
+
+
+/* FMROUNDSLIST */
+#fmRoundsList #table {
+    margin-top: 20px; 
+    text-align: left;
+    border-collapse: collapse;
+}
+#fmRoundsList #table th, #fmRoundsList #table td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    white-space: nowrap;
+}
+
+#fmRoundsList #table-container {
+    overflow: auto;
+}

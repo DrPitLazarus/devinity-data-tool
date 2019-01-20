@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Flood Rounds List - Devinity Data Tool</title>
+    <link rel="stylesheet" href="/assets/style.css">
+
+    <script src="/assets/bundle.js" defer></script>
+</head>
+
+<body>
+    <nav id="main-nav">
+        <h2 id="site-header">Devinity Data Tool</h2>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </nav>
+    <main id="fmRoundsList">
+        <h2>Flood Rounds List</h2>
+        <p>
+            Get round data for the Flood gamemode. 
+            Select a fetch type and click the round you wish to view. 
+            A maximum of 200 results will be shown.
+        </p>
+        <p id="label-status">Status:</p>
+
+        <strong>Fetch rounds by </strong>
+        <select id="fetch-type">
+            <option value="recent" selected>Recent</option>
+            <option value="server">Server</option>
+            <option value="player">Player</option>
+        </select>
+        <span class="-hidden-field is-hidden" data-value="server">
+            <label>with server</label>
+            <select id="serverdd">
+                <option value="us1">US1</option>
+                <option value="us2">US2</option>
+                <option value="eu1">EU1</option>
+                <option value="eu2">EU2</option>
+                <option value="eu3">EU3</option>
+            </select>
+        </span>
+        <span class="-hidden-field is-hidden" data-value="player">
+            <label>with Steam ID</label>
+            <input type="text" id="fplayeri" placeholder="STEAM_0:0:34760319">
+        </span>
+        <button id="fetch-btn">Go</button>
+        
+        <div id="table-container">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Server</th>
+                        <th>Players</th>
+                        <th>Duration</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>

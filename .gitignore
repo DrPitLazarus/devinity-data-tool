@@ -14,3 +14,4 @@ Thumbs.db
 node_modules
 now-secrets.json
 .env
+ui/public/assets/bundle.js

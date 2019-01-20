@@ -3,9 +3,12 @@
     "name": "devinity-data-tool",
     "public": false,
     "builds": [
-        { "src": "api/package.json", "use": "@now/node" }
+        { "src": "api/index.js", "use": "@now/node" },
+        { "src": "ui/package.json", "use": "@now/static-build" }
     ],
     "routes": [
-        { "src": "/api/(.*)", "dest": "api/index.js" }
+        { "src": "/api/(.*)", "dest": "api/index.js" },
+        { "src": "/", "dest": "ui/index.html" },
+        { "src": "/(.*)", "dest": "ui/$1.html" }
     ]
 }
